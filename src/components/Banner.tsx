@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link'; // Import Link from Next.js
 import styles from './banner.module.css';
 
 const Banner: React.FC = () => {
@@ -15,35 +15,27 @@ const Banner: React.FC = () => {
 
   // State to track the current image index
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
-  // Router for navigation
-  const router = useRouter();
 
   // Function to handle image change on click
   const handleImageClick = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
 
-  // Function to handle navigation to hospital route
-  const handleButtonClick = () => {
-    router.push('/hospital');
-  };
-
   return (
-    <div className={styles.banner} onClick={handleImageClick}>
+    <div className={styles.banner} >
       <img
         src={images[currentImageIndex]} // Use the current image
         alt="Vaccine Advertisement"
         className={styles.bannerImage}
+        onClick={handleImageClick}
       />
       <div className={styles.overlay}>
         <h1>Vaccine Service Center</h1>
         <p>ประชาสัมพันธ์การให้บริการวัคซีนครบทุกประเภท</p>
-        
       </div>
-      <button className={styles.selectHospitalButton} onClick={handleButtonClick}>
-          Select Hospital
-        </button>
+      <Link href="/hospital" className={styles.selectHospitalButton} >
+        Select Hospital
+      </Link>
     </div>
   );
 };
