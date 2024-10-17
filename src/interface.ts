@@ -18,9 +18,29 @@ export  interface HospitalItem {
     data: HospitalItem[]
   }
 
-
-  
   export interface SingleHospitalJson {
     success: boolean;
     data: HospitalItem;
+  }
+
+
+  export interface UserProfile {
+    success: boolean,
+    data: {
+      _id: string,
+      name: string,
+      email: string,
+      tel: string,
+      role: string,
+      createdAt: string,
+      __v: number,
+    }
+  }
+
+  export interface userLogInResponse {
+    success: boolean,
+    _id: string,
+    name: string,
+    email: string,
+    token: string,
   }
