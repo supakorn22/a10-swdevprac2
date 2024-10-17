@@ -4,7 +4,7 @@ import { TextField, Select, MenuItem, Button, FormControl, InputLabel, Typograph
 import DateReserve from '@/components/DateReserve';
 import getUserProfile from '@/libs/getUserProfile'; // Import the function from libs
 import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+import { authOptions } from '@/app/api/auth/[...nextauth]/authOptions';
 import next from 'next';
 // Define the structure of the user profile data you expect from the API
 
